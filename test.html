@@ -102,8 +102,15 @@
     </script>
   </head>
   <body>
-<iframe src="http://yunlingkeji.com/" style="width:100%; height:100%; border:0px;" scrolling="no">
+	  <iframe src="http://yunlingkeji.com/" style="width:100%; height:100%; border:0px;" scrolling="no">
 	
+		
+    <button onclick="capturePhoto();">Capture Photo</button> <br>
+    <button onclick="capturePhotoEdit();">Capture Editable Photo</button> <br>
+    <button onclick="getPhoto(pictureSource.PHOTOLIBRARY);">From Photo Library</button><br>
+    <button onclick="getPhoto(pictureSource.SAVEDPHOTOALBUM);">From Photo Album</button><br>
+	
+	 <button onclick="javascript:window.location.href='http://remote.yunlingkeji.com/test/'">open</button><br>
 		
     <img style="display:none;width:60px;height:60px;" id="smallImage" src="" />
     <img style="display:none;" id="largeImage" src="" />
