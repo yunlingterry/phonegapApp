@@ -20,7 +20,7 @@
     </author>
 	
 	
-	 <access origin="http://remote.yunlingkeji.com" subdomains="true" />
+	 <access origin="http://yunlingkeji.com" subdomains="true" />
 	 
 <gap:platform name="ios" />
 <gap:platform name="android" />
