@@ -28,21 +28,23 @@
 		 document.addEventListener("deviceready",onDeviceReady,false);
 	
 		window.addEventListener('message',function(event) {
-    alert(event.data);
    
-   var obj=event.data;
    
-   alert(obj.funcname);
+   var objname=event.data;
    
-   if (obj.funcname=="capturePhoto")
+    alert("222"+ objname);
+    
+   alert(objname.funcname);
+   
+   if (objname.funcname=="capturePhoto")
    {
    
    alert("in");
    
-   obj.onSuccess();
+   objname.onSuccess();
    
    
-   capturePhoto(obj.onSuccess,obj.onFail);
+   capturePhoto(objname.onSuccess,objname.onFail);
    }
     
 },false);
