@@ -18,10 +18,12 @@
    
    var obj=event.data;
    
-   if (obj=="capturePhoto")
+   if (obj.funcname=="capturePhoto")
    {
-   capturePhoto();
+   capturePhoto(obj.onSuccess,obj.onFail);
    }
+    
+  
     
     
 },false);
@@ -59,27 +61,11 @@
 
     // Called when a photo is successfully retrieved
     //
-    function onPhotoURISuccess(imageURI) {
-      // Uncomment to view the image file URI 
-      // console.log(imageURI);
-
-      // Get image handle
-      //
-      var largeImage = document.getElementById('largeImage');
-
-      // Unhide image elements
-      //
-      largeImage.style.display = 'block';
-
-      // Show the captured photo
-      // The inline CSS rules are used to resize the image
-      //
-      largeImage.src = imageURI;
-    }
+   
 
     // A button will call this function
     //
-    function capturePhoto() {
+    function capturePhoto(onPhotoDataSuccess, onFail) {
       // Take picture using device camera and retrieve image as base64-encoded string
       navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50 });
     }
@@ -100,12 +86,7 @@
         sourceType: source });
     }
 
-    // Called if something bad happens.
-    // 
-    function onFail(message) {
-      alert('Failed because: ' + message);
-    }
-
+   
 
 
     </script>
