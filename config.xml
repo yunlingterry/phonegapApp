@@ -7,12 +7,12 @@
 
     <!-- versionCode is optional and Android only -->
 
-    <name>ReminderApp</name>
+    <name>拍照备忘</name>
 	
 	
 
     <description>
-       sample
+       拍一张照片，立即可以备忘信息
     </description>
 
     <author href="https://build.phonegap.com" email="support@phonegap.com">
