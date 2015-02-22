@@ -14,23 +14,7 @@
 
     // Wait for PhoneGap to connect with the device
     //
-    document.addEventListener("deviceready",onDeviceReady,false);
-	
-		window.addEventListener('message',function(event) {
-    alert(event.data);
    
-   var obj=event.data;
-   
-   
-   if (obj.funcname=="capturePhoto")
-   {
-   capturePhoto(obj.onSuccess,obj.onFail);
-   }
-    
-  
-    
-    
-},false);
 
 
     // PhoneGap is ready to be used!
@@ -41,27 +25,33 @@
 		
 		
 		
+		 document.addEventListener("deviceready",onDeviceReady,false);
+	
+		window.addEventListener('message',function(event) {
+    alert(event.data);
+   
+   var obj=event.data;
+   
+   
+   if (obj.funcname=="capturePhoto")
+   {
+   
+   alert("in");
+   
+   obj.onSuccess();
+   
+   
+   capturePhoto(obj.onSuccess,obj.onFail);
+   }
+    
+},false);
+
+		
     }
 
     // Called when a photo is successfully retrieved
     //
-    function onPhotoDataSuccess(imageData) {
-      // Uncomment to view the base64 encoded image data
-      // console.log(imageData);
-
-      // Get image handle
-      //
-      var smallImage = document.getElementById('smallImage');
-
-      // Unhide image elements
-      //
-      smallImage.style.display = 'block';
-
-      // Show the captured photo
-      // The inline CSS rules are used to resize the image
-      //
-      smallImage.src = "data:image/jpeg;base64," + imageData;
-    }
+  
 
     // Called when a photo is successfully retrieved
     //
@@ -76,19 +66,9 @@
 
     // A button will call this function
     //
-    function capturePhotoEdit() {
-      // Take picture using device camera, allow edit, and retrieve image as base64-encoded string  
-      navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 20, allowEdit: true }); 
-    }
 
-    // A button will call this function
-    //
-    function getPhoto(source) {
-      // Retrieve image file location from specified source
-      navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50, 
-        destinationType: destinationType.FILE_URI,
-        sourceType: source });
-    }
+
+   
 
    
 
